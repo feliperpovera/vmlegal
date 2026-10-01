@@ -1,6 +1,18 @@
 {
   "documentos": [
     {
+      "titulo": "Columna de prueba — Felipe Restrepo",
+      "fecha": "2026-10-01",
+      "area": "tributario",
+      "descripcion": "Documento de prueba para verificar que el panel publica en el sitio. Se puede eliminar desde el panel.",
+      "palabras_clave": [
+        "prueba",
+        "panel"
+      ],
+      "archivo": "",
+      "destacado": false
+    },
+    {
       "titulo": "Circular N.º 7 de 2026 — Impuesto al patrimonio de personas jurídicas",
       "fecha": "2026-02-25",
       "area": "tributario",
