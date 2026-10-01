@@ -308,7 +308,7 @@
   /* ===================  Validación y envío del formulario  ============ */
   // Función de Supabase que reenvía la solicitud por Resend
   // (código en supabase/functions/contacto).
-  var FORM_ENDPOINT = 'https://PROYECTO.supabase.co/functions/v1/contacto';
+  var FORM_ENDPOINT = 'https://hciwbnmnoeobtcfmfjox.supabase.co/functions/v1/contacto';
   var form = document.getElementById('contactForm');
   if (form) {
     var ok = document.getElementById('formOk');
