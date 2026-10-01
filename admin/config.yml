@@ -1,0 +1,80 @@
+# Panel de VM Legal (Sveltia CMS).
+# Cada cambio se guarda como commit en el repositorio y GitHub Pages lo publica.
+backend:
+  name: github
+  repo: RevUpAG/vmlegal-propuesta
+  branch: main
+  commit_messages:
+    create: 'Panel: crea {{collection}} «{{slug}}»'
+    update: 'Panel: actualiza {{collection}} «{{slug}}»'
+    delete: 'Panel: elimina {{collection}} «{{slug}}»'
+    uploadMedia: 'Panel: sube {{path}}'
+    deleteMedia: 'Panel: elimina {{path}}'
+
+site_url: https://revupag.github.io/vmlegal-propuesta/
+logo_url: ../assets/img/logo-vmlegal.png
+
+media_folder: uploads
+public_folder: /uploads
+
+# Las fotos del equipo se convierten a WebP y se reducen a 800 px al subirlas.
+media_libraries:
+  default:
+    config:
+      max_file_size: 15000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 800
+          height: 800
+
+collections:
+  - name: documentos
+    label: Documentos
+    files:
+      - name: documentos
+        label: Circulares y documentos
+        file: data/documentos.json
+        fields:
+          - name: documentos
+            label: Documentos
+            label_singular: Documento
+            widget: list
+            summary: '{{fields.fecha}} · {{fields.titulo}}'
+            fields:
+              - { name: titulo, label: Título, widget: string }
+              - { name: fecha, label: Fecha, widget: datetime, time_format: false, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD' }
+              - name: area
+                label: Área
+                widget: select
+                options:
+                  - { label: Tributario, value: tributario }
+                  - { label: Societario, value: societario }
+                  - { label: Cambiario, value: cambiario }
+                  - { label: Aduanero, value: aduanero }
+              - { name: descripcion, label: Descripción corta, widget: text, required: false }
+              - { name: palabras_clave, label: Palabras clave, widget: list, required: false, hint: 'Una por renglón. Sirven para el buscador.' }
+              - { name: archivo, label: Archivo PDF, widget: file, media_folder: /uploads/documentos, public_folder: /uploads/documentos, accept: application/pdf }
+              - { name: destacado, label: Destacar arriba, widget: boolean, default: false, required: false }
+
+  - name: equipo
+    label: Equipo
+    files:
+      - name: equipo
+        label: Miembros del equipo
+        file: data/equipo.json
+        fields:
+          - name: miembros
+            label: Miembros
+            label_singular: Miembro
+            widget: list
+            summary: '{{fields.nombre}} · {{fields.cargo}}'
+            hint: 'Arrastre para cambiar el orden en que aparecen.'
+            fields:
+              - { name: nombre, label: Nombre completo, widget: string }
+              - { name: cargo, label: Cargo, widget: string, required: false, hint: 'Ej.: Abogada · Socia' }
+              - { name: foto, label: Foto, widget: image, required: false, media_folder: /uploads/equipo, public_folder: /uploads/equipo, hint: 'JPG o PNG. Se recorta en círculo; mejor un retrato centrado.' }
+              - { name: pregrado, label: Pregrado, widget: string, required: false }
+              - { name: posgrado, label: Posgrado, widget: string, required: false }
+              - { name: perfil, label: Perfil (texto largo), widget: text, required: false }

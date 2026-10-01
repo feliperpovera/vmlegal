@@ -68,8 +68,9 @@
   .site-header .logo img { height: 48px; }
 }
 
+/* Con 5 páginas en el menú el botón solo cabe desde 1180 px; antes, "Contacto" cumple su función. */
 .site-header__cta { display: none; }
-@media (min-width: 1024px) {
+@media (min-width: 1180px) {
   .site-header__cta { display: inline-flex; min-height: 46px; font-size: var(--fs-xs); }
 }
 
@@ -247,11 +248,16 @@ body.nav-locked { overflow: hidden; }
 }
 .link-arrow:hover svg { transform: translateX(4px); }
 
+/* Páginas internas: la primera sección hace de cabecera de página. */
+.section--page { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+.section--page .section-title { font-size: var(--fs-2xl); }
+
 /* ==========================  La firma  =================================== */
 .s-firma { display: grid; gap: var(--sp-8); }
 @media (min-width: 940px) {
   .s-firma { grid-template-columns: 1.15fr .85fr; gap: var(--sp-9); align-items: start; }
 }
+.s-firma__text--solo { max-width: 62ch; }
 .s-firma__text p { margin-top: var(--sp-4); font-weight: 300; }
 .s-firma__text .section-title { text-transform: uppercase; }
 
@@ -495,7 +501,19 @@ body.nav-locked { overflow: hidden; }
   color: var(--vm-teal-text);
   margin-top: .4rem; margin-bottom: var(--sp-3);
 }
-.member__sum { font-size: var(--fs-sm); font-weight: 300; color: var(--vm-muted); }
+.member__photo {
+  width: 112px; height: 112px; border-radius: var(--radius-pill);
+  object-fit: cover; object-position: 50% 25%;   /* retratos: protege la frente */
+  margin-bottom: var(--sp-4);
+  background: var(--vm-mist);
+}
+.member__edu { display: grid; gap: var(--sp-2); font-size: var(--fs-sm); font-weight: 300; color: var(--vm-muted); }
+.member__edu b {
+  display: block;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--vm-ink);
+}
 
 /* ==========================  Actualidad  ================================= */
 .filters {
@@ -776,27 +794,5 @@ body.nav-locked { overflow: hidden; }
 .wa:hover { transform: scale(1.06); }
 .wa svg { width: 28px; height: 28px; }
 
-/* Esquina opuesta a WhatsApp para que no compitan en el pulgar. */
-.back-proposal {
-  position: fixed; left: var(--gutter);
-  bottom: calc(var(--gutter) + env(safe-area-inset-bottom) + 6px);
-  z-index: 70;
-  display: inline-flex; align-items: center; gap: .45rem;
-  padding: .55rem 1rem;
-  background: rgba(16,24,32,.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: rgba(255,255,255,.85);
-  border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
-  box-shadow: var(--shadow-md);
-  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
-  white-space: nowrap;
-}
-.back-proposal:hover { background: var(--vm-teal-solid); color: #fff; }
-.back-proposal svg {
-  width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2;
-  stroke-linecap: round; stroke-linejoin: round;
-}
+
 

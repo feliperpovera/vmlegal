@@ -209,6 +209,21 @@ window.VMi18n = (function () {
     "Escribir por WhatsApp": "Message us on WhatsApp",
 
     /* --- Metadatos del documento --- */
+    /* --- Páginas internas, panel y contenido generado desde JSON --- */
+    "Valor agregado": "Added value",
+    "Documentos": "Documents",
+    "Lo que nos": "What sets",
+    "diferencia": "us apart",
+    "Ver nuestro valor agregado": "See our added value",
+    "Ingreso al panel": "Staff sign-in",
+    "Pregrado": "Undergraduate",
+    "Posgrado": "Graduate",
+    "Ver documento (PDF)": "View document (PDF)",
+    "Valor agregado · VM Legal": "Added value · VM Legal",
+    "Equipo · VM Legal": "Team · VM Legal",
+    "Documentos · VM Legal": "Documents · VM Legal",
+    "Contáctenos · VM Legal": "Contact us · VM Legal",
+
     "__title": "VM Legal · Tax, commercial, corporate and foreign exchange lawyers — Medellín",
     "__description": "VM Legal is a law firm founded in 2012 in Medellín. We advise domestic and international companies and families on tax, commercial, corporate and foreign exchange law, and on the purchase and sale of businesses."
   };
@@ -279,7 +294,7 @@ window.VMi18n = (function () {
     walkAttrs(en);
 
     document.documentElement.lang = lang;
-    document.title = en ? EN.__title : (originals.__title || document.title);
+    document.title = en ? (EN[originals.__title] || EN.__title) : originals.__title;
 
     var desc = document.querySelector('meta[name="description"]');
     if (desc) {

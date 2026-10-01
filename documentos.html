@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0093BD">
-<title>VM Legal · Abogados en derecho tributario, comercial, corporativo y cambiario — Medellín</title>
-<meta name="description" content="VM Legal es una firma de abogados fundada en 2012 en Medellín. Asesoramos a compañías nacionales e internacionales y a familias en derecho tributario, comercial, corporativo y cambiario, y en la compra y venta de negocios.">
+<title>Documentos · VM Legal</title>
+<meta name="description" content="Circulares y documentos de VM Legal sobre cambios normativos y jurisprudenciales. Busque por área o palabra clave.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://www.vmlegal.com.co/">
 
@@ -112,52 +112,41 @@
 
 <main id="contenido">
 
-<!-- ======================  HERO  ====================== -->
-<section class="s-hero" id="inicio">
-  <div class="s-hero__bg" aria-hidden="true"></div>
-  <div class="wrap s-hero__inner">
-    <p class="s-hero__kicker">Firma de abogados · Medellín · Desde 2012</p>
-    <h1 class="s-hero__title">
-      Asesoría legal<br>con criterio<br><em>de negocio.</em>
-    </h1>
-    <p class="s-hero__lead">
-      Derecho tributario, comercial, corporativo y cambiario para compañías
-      nacionales e internacionales, familias y transacciones de compra y venta.
+<!-- ======================  ACTUALIDAD  ====================== -->
+<section class="section section--page section--mist" id="actualidad">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Documentos</p>
+      <h1 class="section-title">Circulares VM Legal</h1>
+      <p class="section-lead">
+        Los cambios normativos y jurisprudenciales que afectan a nuestros clientes.
+        Filtre por área o busque por palabra clave.
+      </p>
+    </div>
+
+    <div class="filters reveal">
+      <div class="filters__search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <label class="sr-only" for="q">Buscar en las circulares</label>
+        <input type="search" id="q" placeholder="Buscar: renta, DIAN, patrimonio…" autocomplete="off">
+      </div>
+      <div class="filters__chips" role="group" aria-label="Filtrar por área">
+        <button type="button" class="chip" data-filter="todas" aria-pressed="false">Todas</button>
+        <button type="button" class="chip" data-filter="tributario" aria-pressed="false">Tributario</button>
+        <button type="button" class="chip" data-filter="societario" aria-pressed="false">Societario</button>
+        <button type="button" class="chip" data-filter="cambiario" aria-pressed="false">Cambiario</button>
+        <button type="button" class="chip" data-filter="aduanero" aria-pressed="false">Aduanero</button>
+      </div>
+    </div>
+
+    <ul class="circulars" id="circulars">
+      <!-- Se llena desde data/documentos.json -->
+    </ul>
+
+
+    <p class="circulars__msg" id="circularsEmpty" hidden>
+      No encontramos circulares con ese criterio. Pruebe con otra palabra o área.
     </p>
-    <div class="s-hero__cta">
-      <a class="btn btn--primary btn--xl" href="contacto.html">Agendar una asesoría</a>
-      <a class="btn btn--ghost" href="valor-agregado.html">Ver áreas de práctica</a>
-    </div>
-  </div>
-
-  <ul class="s-hero__marks">
-    <li><b>2012</b><span>Año de fundación</span></li>
-    <li><b>+25</b><span>Años de experiencia de los socios</span></li>
-    <li><b>4</b><span>Áreas de práctica</span></li>
-    <li><b>+150</b><span>Circulares publicadas</span></li>
-  </ul>
-</section>
-
-<!-- ======================  LA FIRMA  ====================== -->
-<section class="section" id="firma">
-  <div class="wrap s-firma">
-    <div class="s-firma__text s-firma__text--solo reveal">
-      <p class="eyebrow">Nuestra firma</p>
-      <h2 class="section-title">Cercanos, analíticos<br>y orientados al negocio</h2>
-      <p>
-        Firma fundada en 2012, reconocida por el servicio que presta a compañías
-        nacionales e internacionales y a familias en derecho tributario, comercial
-        y cambiario, y en la compra y venta de negocios.
-      </p>
-      <p>
-        Un acompañamiento oportuno, cercano y personal, con alto componente
-        analítico y un equipo interdisciplinario que permite una asesoría integral.
-      </p>
-      <a class="link-arrow" href="valor-agregado.html">
-        Ver nuestro valor agregado
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
 
   </div>
 </section>

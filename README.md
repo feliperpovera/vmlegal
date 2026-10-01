@@ -5,11 +5,9 @@ Propuesta comercial y demostración navegable del nuevo sitio web de
 
 ### ▶ Ver en vivo
 
-**https://revupag.github.io/vmlegal-propuesta/**
+**https://revupag.github.io/vmlegal-propuesta/** · panel en **/admin/**
 
-Ese es el enlace para enviarle al cliente. Abre en la propuesta; el botón
-“Sí, quiero ver mi página” lleva al sitio terminado, y desde el sitio hay un
-enlace de vuelta. Pensado para abrirse desde el celular.
+La propuesta fue aceptada (29 sep 2026) y se retiró; la raíz ya es el sitio.
 
 ---
 
@@ -17,13 +15,33 @@ enlace de vuelta. Pensado para abrirse desde el celular.
 
 | Ruta | Qué es |
 |---|---|
-| `index.html` | La **propuesta**: diagnóstico del sitio actual, beneficios, comparativa antes/después, proceso y entregables. Termina en el CTA que lleva al sitio. |
-| `sitio/index.html` | El **sitio terminado**, navegable y funcional: inicio, la firma, áreas de práctica y equipo en carrusel, actualidad con buscador y contacto. |
-| `assets/css/brand.css` | Sistema de marca: color, tipografía, escala y componentes base. |
-| `assets/css/propuesta.css` | Estilos de la propuesta. |
-| `assets/css/sitio.css` | Estilos del sitio. |
-| `assets/js/*.js` | Interacciones, sin librerías externas. |
-| `assets/img/` | Logo original de VM Legal en WebP y PNG, más el favicon. |
+| `index.html` | Inicio: hero y la firma. |
+| `valor-agregado.html` | Pilares de la firma y áreas de práctica en carrusel. |
+| `equipo.html` | Equipo, pintado desde `data/equipo.json`. |
+| `documentos.html` | Circulares con buscador y filtro por área, desde `data/documentos.json`. |
+| `contacto.html` | Datos de contacto y formulario (valida; aún no envía). |
+| `admin/` | **Panel de contenido** (Sveltia CMS). Configuración en `admin/config.yml`. |
+| `data/*.json` | Contenido editable: lo escribe el panel. |
+| `uploads/` | PDFs y fotos que se suben desde el panel. |
+| `assets/js/datos.js` | Lee los JSON y pinta equipo y documentos. |
+| `assets/js/sitio.js` · `i18n.js` | Interacciones y ES ⇄ EN, sin librerías. |
+
+## El panel
+
+Sin servidor ni base de datos propios: el panel guarda cada cambio como un
+commit en este repositorio y GitHub Pages lo publica en ~1 minuto.
+
+- **Documentos:** título, fecha, área, descripción, palabras clave y PDF.
+- **Equipo:** nombre, cargo, foto, pregrado, posgrado y perfil. Las fotos se
+  convierten a WebP de 800 px al subirlas. Se reordena arrastrando.
+- Crear y eliminar: botones del propio panel.
+
+**Acceso:** *Iniciar sesión con un token de acceso*. Cada persona necesita una
+cuenta de GitHub con permiso de escritura en el repo y un token *fine-grained*
+limitado a este repositorio (permiso **Contents: Read and write**). El botón
+«Iniciar sesión con GitHub» requiere un servicio OAuth aparte; no está montado.
+
+⚠️ El repo es público: todo lo que se sube (PDFs, fotos) es público.
 
 ---
 

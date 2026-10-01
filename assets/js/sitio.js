@@ -15,6 +15,12 @@
     });
   }
 
+  // Equipo y Documentos se pintan desde JSON (datos.js): todo lo demás espera.
+  (window.VMdatos || Promise.resolve()).then(init);
+  function init() {
+  // Lo pintado desde JSON llegó después de la primera traducción.
+  if (window.VMi18n && window.VMi18n.lang === 'en') window.VMi18n.apply('en');
+
   /* ===================  Menú móvil  =================================== */
   var burger = document.getElementById('burger');
   var nav    = document.getElementById('nav');
@@ -41,7 +47,7 @@
     scrim.addEventListener('click', function () { setMenu(false); });
 
     // Al elegir una sección el cajón se cierra solo.
-    nav.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    nav.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () { setMenu(false); });
     });
 
@@ -63,23 +69,13 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ===================  Sección activa en el menú  ==================== */
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
-  var sections = links
-    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
-    .filter(Boolean);
-
-  if (sections.length && 'IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        links.forEach(function (a) {
-          a.classList.toggle('is-current', a.getAttribute('href') === '#' + entry.target.id);
-        });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-    sections.forEach(function (s) { spy.observe(s); });
-  }
+  /* ===================  Página actual en el menú  ==================== */
+  var here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav__link').forEach(function (a) {
+    var on = a.getAttribute('href') === here;
+    a.classList.toggle('is-current', on);
+    if (on) a.setAttribute('aria-current', 'page');
+  });
 
   /* ===================  Revelado al hacer scroll  ===================== */
   var reveals = document.querySelectorAll('.reveal');
@@ -219,10 +215,9 @@
     render();
   });
 
-  /* ===================  Filtro de circulares  ========================= */
-  /* Arranca sin nada seleccionado: se muestran las opciones y el buscador,
-     y la lista solo aparece cuando el visitante elige un área o escribe.
-     Así la sección no alarga la página de entrada. */
+  /* ===================  Filtro de documentos  ========================= */
+  /* En su propia página la lista arranca completa ("Todas"). Si se deselecciona
+     el área y no hay búsqueda, se muestra la invitación, si la página la tiene. */
   var list  = document.getElementById('circulars');
   var input = document.getElementById('q');
   var empty = document.getElementById('circularsEmpty');
@@ -250,7 +245,7 @@
 
     function apply() {
       // Sin área ni búsqueda: no se lista nada, solo la invitación.
-      if (!area && !needle) {
+      if (!area && !needle && start) {
         items.forEach(function (li) { li.hidden = true; });
         list.hidden = true;
         if (start) start.hidden = false;
@@ -292,16 +287,17 @@
     }
 
     if (input) {
-      var t;
+      var typing;   // no llamarlo t: taparía la función de traducción
       input.addEventListener('input', function () {
-        clearTimeout(t);
-        t = setTimeout(function () {
+        clearTimeout(typing);
+        typing = setTimeout(function () {
           needle = normalize(input.value.trim());
           apply();
         }, 140);
       });
     }
 
+    setChip('todas');
     apply();
   }
 
@@ -366,4 +362,5 @@
     });
   }
 
+  } // init
 })();
