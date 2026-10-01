@@ -283,7 +283,24 @@ window.VMi18n = (function () {
     "Conocer al equipo": "Meet the team",
     "Ruta de navegación": "Breadcrumb",
 
-    "__title": "VM Legal · Tax, commercial, corporate and foreign exchange lawyers — Medellín",
+    "Firma de abogados en Medellín · Desde 2012": "Law firm in Medellín · Since 2012",
+    "Firma de abogados en Medellín para empresas y familias": "A Medellín law firm for companies and families",
+    "VM Legal es un bufete de abogados fundado en 2012 en Medellín que asesora a compañías nacionales e internacionales y a familias en toda Colombia, con un acompañamiento oportuno, cercano y personal.": "VM Legal is a law firm founded in 2012 in Medellín that advises domestic and international companies and families throughout Colombia, with timely, close and personal support.",
+    "Firma de abogados en Medellín, Colombia, fundada en 2012. Bufete especializado en derecho tributario, comercial, corporativo y cambiario, y fusiones y adquisiciones.": "Law firm in Medellín, Colombia, founded in 2012, specialized in tax, commercial, corporate and foreign exchange law, and mergers and acquisitions.",
+    "VM Legal es una firma de abogados en Medellín fundada en 2012, con socias formadas en España y Francia y experiencia desde el año 2000. Asesoramos a clientes en toda Colombia.": "VM Legal is a Medellín law firm founded in 2012, led by partners educated in Spain and France with experience since 2000. We advise clients throughout Colombia.",
+
+    "Firma de abogados en Medellín, Colombia | VM Legal": "Law firm in Medellín, Colombia | VM Legal",
+    "Quiénes somos | Bufete de abogados en Medellín · VM Legal": "About us | Law firm in Medellín · VM Legal",
+    "Abogados en Medellín | Equipo de VM Legal": "Lawyers in Medellín | VM Legal team",
+    "Circulares y documentos legales | VM Legal": "Legal circulars and documents | VM Legal",
+    "Contacto | VM Legal, abogados en Medellín": "Contact | VM Legal, lawyers in Medellín",
+    "Abogados tributaristas en Medellín · VM Legal": "Tax lawyers in Medellín · VM Legal",
+    "Abogados corporativos en Medellín · VM Legal": "Corporate lawyers in Medellín · VM Legal",
+    "Abogados de derecho comercial en Medellín · VM Legal": "Commercial lawyers in Medellín · VM Legal",
+    "Derecho cambiario e inversión extranjera · VM Legal": "Foreign exchange law and foreign investment · VM Legal",
+    "Fusiones y adquisiciones (M&A) en Medellín · VM Legal": "Mergers and acquisitions (M&A) in Medellín · VM Legal",
+
+    "__title": "Law firm in Medellín, Colombia | VM Legal",
     "__description": "VM Legal is a law firm founded in 2012 in Medellín. We advise domestic and international companies and families on tax, commercial, corporate and foreign exchange law, and on the purchase and sale of businesses."
   };
 
@@ -353,7 +370,7 @@ window.VMi18n = (function () {
     walkAttrs(en);
 
     document.documentElement.lang = lang;
-    document.title = en ? (EN[originals.__title] || EN.__title) : originals.__title;
+    document.title = en ? (EN[originals.__title] || originals.__title) : originals.__title;
 
     var desc = document.querySelector('meta[name="description"]');
     if (desc) {
