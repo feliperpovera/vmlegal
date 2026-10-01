@@ -1,0 +1,11 @@
+{
+  "titulo": "PRUEBA técnica — tildes ñ y «comillas» <b>sin html</b>",
+  "fecha": "2026-10-02",
+  "area": "comercial",
+  "descripcion": "Verifica PDF, área Comercial, año nuevo y escape de HTML.",
+  "palabras_clave": [
+    "zzprueba"
+  ],
+  "archivo": "/uploads/documentos/prueba-tecnica.pdf",
+  "destacado": false
+}
