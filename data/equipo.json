@@ -3,18 +3,20 @@
     {
       "nombre": "Beatriz Elena Villegas De Bedout",
       "cargo": "Abogada · Socia",
-      "foto": "",
+      "foto": "/uploads/equipo/beatriz-villegas.webp",
       "pregrado": "Derecho, Universidad Pontificia Bolivariana",
       "posgrado": "Legislación Tributaria, UPB · Máster en Asesoría Fiscal y Dirección Tributaria, Universidad Politécnica de Cataluña",
-      "perfil": "Abogada de la Universidad Pontificia Bolivariana, con postgrado en Legislación Tributaria de la misma universidad y Máster en Asesoría Fiscal y Dirección Tributaria de la Universidad Politécnica de Cataluña, España. Ha laborado, entre otros, en Contabler S.A. y en González de Guevara & Abogados. Su práctica se ha enfocado en la asesoría en materia fiscal, corporativa y cambiaria, y en la estructuración e implementación de compra y venta de negocios."
+      "perfil": "Abogada de la Universidad Pontificia Bolivariana, con postgrado en Legislación Tributaria de la misma universidad y Máster en Asesoría Fiscal y Dirección Tributaria de la Universidad Politécnica de Cataluña, España. Ha laborado, entre otros, en Contabler S.A. y en González de Guevara & Abogados. Su práctica se ha enfocado en la asesoría en materia fiscal, corporativa y cambiaria, y en la estructuración e implementación de compra y venta de negocios.",
+      "socio": true
     },
     {
       "nombre": "Adriana Melo White",
       "cargo": "Abogada · Socia",
-      "foto": "",
+      "foto": "/uploads/equipo/adriana-melo.webp",
       "pregrado": "Derecho, Universidad Pontificia Bolivariana",
       "posgrado": "Legislación Tributaria, UPB · Máster en Derecho Fiscal de los Negocios, Universidad Panthéon-Sorbonne",
-      "perfil": "Abogada de la Universidad Pontificia Bolivariana, con postgrado en Legislación Tributaria de la misma universidad y Máster en Derecho Fiscal de los Negocios de la Universidad Panthéon-Sorbonne, Francia. Ha laborado, entre otros, en Ignacio Sanín Bernal & Cía. S.A. Abogados y en González de Guevara & Abogados. Su práctica se ha enfocado en la asesoría en materia fiscal, corporativa y cambiaria, y en la estructuración e implementación de compra y venta de negocios."
+      "perfil": "Abogada de la Universidad Pontificia Bolivariana, con postgrado en Legislación Tributaria de la misma universidad y Máster en Derecho Fiscal de los Negocios de la Universidad Panthéon-Sorbonne, Francia. Ha laborado, entre otros, en Ignacio Sanín Bernal & Cía. S.A. Abogados y en González de Guevara & Abogados. Su práctica se ha enfocado en la asesoría en materia fiscal, corporativa y cambiaria, y en la estructuración e implementación de compra y venta de negocios.",
+      "socio": true
     },
     {
       "nombre": "Natalia Recio Gómez",
@@ -22,7 +24,8 @@
       "foto": "",
       "pregrado": "Derecho, Universidad EAFIT",
       "posgrado": "Especialización en Derecho de la Empresa, Universidad de los Andes",
-      "perfil": "Abogada de la Universidad EAFIT, especialista en Derecho de la Empresa de la Universidad de los Andes. Cuenta con más de ocho años de experiencia en Derecho Empresarial, con énfasis en Derecho Tributario, Aduanero y Cambiario. Hace parte de la firma desde 2025."
+      "perfil": "Abogada de la Universidad EAFIT, especialista en Derecho de la Empresa de la Universidad de los Andes. Cuenta con más de ocho años de experiencia en Derecho Empresarial, con énfasis en Derecho Tributario, Aduanero y Cambiario. Hace parte de la firma desde 2025.",
+      "socio": false
     },
     {
       "nombre": "Fernando de La Espriella Segura",
@@ -30,7 +33,8 @@
       "foto": "",
       "pregrado": "",
       "posgrado": "Especialización en Derecho Tributario y en Derecho Procesal Civil, Universidad Externado de Colombia",
-      "perfil": "Abogado con especialización en Derecho Tributario y en Derecho Procesal Civil de la Universidad Externado de Colombia. Fue coordinador del área de litigios en una firma dedicada a la defensa del sector de infraestructura y asesor de la Secretaría de Hacienda de una entidad territorial. Hace parte de la firma desde 2025."
+      "perfil": "Abogado con especialización en Derecho Tributario y en Derecho Procesal Civil de la Universidad Externado de Colombia. Fue coordinador del área de litigios en una firma dedicada a la defensa del sector de infraestructura y asesor de la Secretaría de Hacienda de una entidad territorial. Hace parte de la firma desde 2025.",
+      "socio": false
     },
     {
       "nombre": "Natalia Sánchez Váron",
@@ -38,7 +42,8 @@
       "foto": "",
       "pregrado": "Derecho, Universidad EAFIT",
       "posgrado": "",
-      "perfil": "Abogada de la Universidad EAFIT. Realizó su énfasis en Derecho Financiero y Bursátil. Su práctica se ha enfocado en acompañamiento corporativo y tributario. Hace parte de la firma desde el año 2023."
+      "perfil": "Abogada de la Universidad EAFIT. Realizó su énfasis en Derecho Financiero y Bursátil. Su práctica se ha enfocado en acompañamiento corporativo y tributario. Hace parte de la firma desde el año 2023.",
+      "socio": false
     },
     {
       "nombre": "Valeria Gómez Gómez",
@@ -46,7 +51,8 @@
       "foto": "",
       "pregrado": "Derecho, Universidad EAFIT",
       "posgrado": "",
-      "perfil": "Abogada de la Universidad EAFIT. Hizo su énfasis en Derecho Financiero y Bursátil, y Derecho Internacional. Hace parte de la firma desde el año 2024."
+      "perfil": "Abogada de la Universidad EAFIT. Hizo su énfasis en Derecho Financiero y Bursátil, y Derecho Internacional. Hace parte de la firma desde el año 2024.",
+      "socio": false
     },
     {
       "nombre": "Alejandro Ossa Osorio",
@@ -54,7 +60,8 @@
       "foto": "",
       "pregrado": "Derecho (en curso), Universidad EAFIT",
       "posgrado": "",
-      "perfil": "Estudiante de Derecho de la Universidad EAFIT. Se encuentra realizando su énfasis en Derecho Tributario. Hace parte de la firma desde el año 2025."
+      "perfil": "Estudiante de Derecho de la Universidad EAFIT. Se encuentra realizando su énfasis en Derecho Tributario. Hace parte de la firma desde el año 2025.",
+      "socio": false
     }
   ]
 }

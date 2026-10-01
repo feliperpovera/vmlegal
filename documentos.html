@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0093BD">
 <title>Documentos · VM Legal</title>
-<meta name="description" content="Circulares y documentos de VM Legal sobre cambios normativos y jurisprudenciales. Busque por área o palabra clave.">
+<meta name="description" content="Circulares y documentos de VM Legal sobre cambios normativos y jurisprudenciales. Busque por área, año o palabra clave.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://www.vmlegal.com.co/">
 
@@ -112,16 +112,26 @@
 
 <main id="contenido">
 
-<!-- ======================  ACTUALIDAD  ====================== -->
-<section class="section section--page section--mist" id="actualidad">
+<section class="p-hero">
+  <div class="wrap p-hero__inner">
+    <p class="eyebrow">Documentos</p>
+    <h1 class="p-hero__title">Circulares VM Legal</h1>
+    <p class="p-hero__lead">Análisis periódico de las novedades tributarias, societarias y cambiarias que impactan a nuestros clientes.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
   <div class="wrap">
-    <div class="reveal">
-      <p class="eyebrow">Documentos</p>
-      <h1 class="section-title">Circulares VM Legal</h1>
-      <p class="section-lead">
-        Los cambios normativos y jurisprudenciales que afectan a nuestros clientes.
-        Filtre por área o busque por palabra clave.
-      </p>
+    <div id="docFeatured"></div>
+  </div>
+</section>
+
+<section class="section section--mist" id="actualidad">
+  <div class="wrap">
+    <div class="reveal sec-head">
+      <p class="eyebrow">Archivo</p>
+      <h2 class="section-title">Todas las circulares</h2>
+      <p class="section-lead">Filtre por área o año, o busque por palabra clave.</p>
     </div>
 
     <div class="filters reveal">
@@ -134,8 +144,13 @@
         <button type="button" class="chip" data-filter="todas" aria-pressed="false">Todas</button>
         <button type="button" class="chip" data-filter="tributario" aria-pressed="false">Tributario</button>
         <button type="button" class="chip" data-filter="societario" aria-pressed="false">Societario</button>
+        <button type="button" class="chip" data-filter="comercial" aria-pressed="false">Comercial</button>
         <button type="button" class="chip" data-filter="cambiario" aria-pressed="false">Cambiario</button>
         <button type="button" class="chip" data-filter="aduanero" aria-pressed="false">Aduanero</button>
+      </div>
+      <div class="filters__year">
+        <label for="year">Año</label>
+        <select id="year"><option value="">Todos</option></select>
       </div>
     </div>
 
@@ -143,24 +158,29 @@
       <!-- Se llena desde data/documentos.json -->
     </ul>
 
-
     <p class="circulars__msg" id="circularsEmpty" hidden>
-      No encontramos circulares con ese criterio. Pruebe con otra palabra o área.
+      No encontramos circulares con ese criterio. Pruebe con otra palabra, área o año.
     </p>
+  </div>
+</section>
 
+<section class="cta-band">
+  <div class="wrap cta-band__inner reveal">
+    <div>
+      <h2>¿Necesita aplicar una circular a su caso?</h2>
+      <p>Le explicamos cómo le afecta la norma y qué decisiones tomar.</p>
+    </div>
+    <a class="btn btn--light btn--xl" href="contacto.html">Escríbanos</a>
   </div>
 </section>
 
 </main>
 
-</main>
-
-<!-- ======================  PIE  ====================== -->
 <footer class="site-footer">
   <div class="wrap site-footer__top">
     <div class="site-footer__brand">
       <picture><source srcset="assets/img/logo-vmlegal-white.webp" type="image/webp"><img alt="VM Legal" width="480" height="388" src="assets/img/logo-vmlegal-white.png"></picture>
-      <p>Firma de abogados fundada en 2012 en Medellín. Derecho tributario, comercial, corporativo y cambiario.</p>
+      <p>Firma de abogados fundada en 2012 en Medellín. Derecho tributario, comercial, corporativo y cambiario, y fusiones y adquisiciones.</p>
     </div>
 
     <nav class="site-footer__nav" aria-label="Navegación del pie">
@@ -176,10 +196,11 @@
     <nav class="site-footer__nav" aria-label="Áreas de práctica">
       <h2>Áreas</h2>
       <ul>
-        <li><a href="valor-agregado.html">Derecho tributario</a></li>
-        <li><a href="valor-agregado.html">Derecho comercial</a></li>
-        <li><a href="valor-agregado.html">Derecho corporativo</a></li>
-        <li><a href="valor-agregado.html">Derecho cambiario</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho tributario</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho comercial</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho corporativo</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho cambiario</a></li>
+        <li><a href="valor-agregado.html#areas">Fusiones y adquisiciones</a></li>
       </ul>
     </nav>
 
@@ -200,7 +221,6 @@
     <p><a href="#politica" id="politica">Política de Tratamiento de Datos</a></p>
   </div>
 </footer>
-
 
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/datos.js" defer></script>

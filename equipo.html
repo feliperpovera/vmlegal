@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0093BD">
 <title>Equipo · VM Legal</title>
-<meta name="description" content="Las abogadas y abogados de VM Legal: formación, posgrados y experiencia.">
+<meta name="description" content="Las socias fundadoras y el equipo de abogados de VM Legal: formación, posgrados y experiencia.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://www.vmlegal.com.co/">
 
@@ -112,13 +112,30 @@
 
 <main id="contenido">
 
-<!-- ======================  EQUIPO  ====================== -->
-<section class="section section--page" id="equipo">
+<section class="p-hero">
+  <div class="wrap p-hero__inner">
+    <p class="eyebrow">Equipo</p>
+    <h1 class="p-hero__title">Un equipo interdisciplinario,<br>cercano y experto</h1>
+    <p class="p-hero__lead">Liderado por sus socias fundadoras, con perfiles que combinan formación internacional y profundidad técnica.</p>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap">
     <div class="reveal sec-head">
-      <p class="eyebrow">Equipo</p>
-      <h1 class="section-title">Quiénes lo atienden</h1>
-      <p class="section-lead">Formados en las mejores universidades del país, con posgrados en España y Francia.</p>
+      <p class="eyebrow">Socias fundadoras</p>
+      <h2 class="section-title">Quienes dirigen la firma</h2>
+    </div>
+    <ul class="partners reveal" id="partnersGrid"></ul>
+  </div>
+</section>
+
+<section class="section section--mist">
+  <div class="wrap">
+    <div class="reveal sec-head">
+      <p class="eyebrow">Abogados y consultores</p>
+      <h2 class="section-title">Quiénes lo atienden</h2>
+      <p class="section-lead">Formados en las mejores universidades del país, con énfasis tributario, corporativo y financiero.</p>
     </div>
   </div>
 
@@ -126,7 +143,6 @@
     <ul class="carousel__track" id="teamTrack" tabindex="0" role="group" aria-label="Equipo de la firma, deslice para ver más">
       <!-- Se llena desde data/equipo.json -->
     </ul>
-
     <div class="wrap carousel__controls">
       <div class="carousel__dots" aria-hidden="true"></div>
       <div class="carousel__arrows">
@@ -141,16 +157,23 @@
   </div>
 </section>
 
-</main>
+<section class="cta-band">
+  <div class="wrap cta-band__inner reveal">
+    <div>
+      <h2>¿Quiere unirse al equipo?</h2>
+      <p>Envíenos su hoja de vida y cuéntenos en qué área le gustaría trabajar.</p>
+    </div>
+    <a class="btn btn--light btn--xl" href="mailto:info@vmlegal.com.co?subject=Hoja%20de%20vida">Enviar hoja de vida</a>
+  </div>
+</section>
 
 </main>
 
-<!-- ======================  PIE  ====================== -->
 <footer class="site-footer">
   <div class="wrap site-footer__top">
     <div class="site-footer__brand">
       <picture><source srcset="assets/img/logo-vmlegal-white.webp" type="image/webp"><img alt="VM Legal" width="480" height="388" src="assets/img/logo-vmlegal-white.png"></picture>
-      <p>Firma de abogados fundada en 2012 en Medellín. Derecho tributario, comercial, corporativo y cambiario.</p>
+      <p>Firma de abogados fundada en 2012 en Medellín. Derecho tributario, comercial, corporativo y cambiario, y fusiones y adquisiciones.</p>
     </div>
 
     <nav class="site-footer__nav" aria-label="Navegación del pie">
@@ -166,10 +189,11 @@
     <nav class="site-footer__nav" aria-label="Áreas de práctica">
       <h2>Áreas</h2>
       <ul>
-        <li><a href="valor-agregado.html">Derecho tributario</a></li>
-        <li><a href="valor-agregado.html">Derecho comercial</a></li>
-        <li><a href="valor-agregado.html">Derecho corporativo</a></li>
-        <li><a href="valor-agregado.html">Derecho cambiario</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho tributario</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho comercial</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho corporativo</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho cambiario</a></li>
+        <li><a href="valor-agregado.html#areas">Fusiones y adquisiciones</a></li>
       </ul>
     </nav>
 
@@ -190,7 +214,6 @@
     <p><a href="#politica" id="politica">Política de Tratamiento de Datos</a></p>
   </div>
 </footer>
-
 
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/datos.js" defer></script>

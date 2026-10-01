@@ -224,6 +224,7 @@
   var start = document.getElementById('circularsStart');
   var verTodas = document.getElementById('verTodas');
   var chips = document.querySelectorAll('.chip');
+  var yearSel = document.getElementById('year');
 
   if (list) {
     var items  = Array.prototype.slice.call(list.querySelectorAll('.circular'));
@@ -260,7 +261,8 @@
       items.forEach(function (li) {
         var matchArea = !area || area === 'todas' || li.dataset.area === area;
         var matchText = !needle || normalize(li.textContent).indexOf(needle) !== -1;
-        var show = matchArea && matchText;
+        var matchYear = !yearSel || !yearSel.value || li.dataset.year === yearSel.value;
+        var show = matchArea && matchText && matchYear;
         li.hidden = !show;
         if (show) shown++;
       });
@@ -296,6 +298,8 @@
         }, 140);
       });
     }
+
+    if (yearSel) yearSel.addEventListener('change', apply);
 
     setChip('todas');
     apply();

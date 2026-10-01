@@ -112,17 +112,17 @@
 
 <main id="contenido">
 
-<!-- ======================  CONTACTO  ====================== -->
-<section class="section section--page" id="contacto">
+<section class="p-hero">
+  <div class="wrap p-hero__inner">
+    <p class="eyebrow">Contacto</p>
+    <h1 class="p-hero__title">Hablemos de su<br>próximo paso</h1>
+    <p class="p-hero__lead">Un socio revisa cada solicitud. Respondemos dentro del siguiente día hábil.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
   <div class="wrap s-contact">
-
     <div class="s-contact__info reveal">
-      <p class="eyebrow">Contacto</p>
-      <h1 class="section-title">Hablemos de su caso</h1>
-      <p class="section-lead">
-        Un socio revisa cada solicitud. Respondemos dentro del siguiente día hábil.
-      </p>
-
       <ul class="s-contact__list">
         <li>
           <span class="s-contact__ico" aria-hidden="true">
@@ -162,7 +162,6 @@
         </li>
       </ul>
     </div>
-
     <form class="s-form reveal" id="contactForm" novalidate>
       <h3 class="s-form__title">Solicitar una asesoría</h3>
 
@@ -194,11 +193,11 @@
         <select id="f-area" name="area">
           <option value="">Seleccione un área…</option>
           <option>Derecho tributario</option>
+          <option>Derecho corporativo y societario</option>
           <option>Derecho comercial</option>
-          <option>Derecho corporativo</option>
           <option>Derecho cambiario</option>
-          <option>Compra o venta de negocios</option>
-          <option>Otro</option>
+          <option>Fusiones y adquisiciones</option>
+          <option>Otro / No estoy seguro</option>
         </select>
       </div>
 
@@ -221,20 +220,22 @@
         Gracias. Su solicitud fue registrada y le responderemos dentro del siguiente día hábil.
       </p>
           </form>
-
   </div>
+</section>
+
+<section class="map reveal" aria-label="Mapa de la oficina">
+  <iframe title="Mapa: Cra 43 A # 16 A sur 38, Medellín (Edificio DHL)"
+          src="https://www.google.com/maps?q=Carrera+43A+%2316A+sur+38,+Medell%C3%ADn,+Colombia&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 </main>
 
-</main>
-
-<!-- ======================  PIE  ====================== -->
 <footer class="site-footer">
   <div class="wrap site-footer__top">
     <div class="site-footer__brand">
       <picture><source srcset="assets/img/logo-vmlegal-white.webp" type="image/webp"><img alt="VM Legal" width="480" height="388" src="assets/img/logo-vmlegal-white.png"></picture>
-      <p>Firma de abogados fundada en 2012 en Medellín. Derecho tributario, comercial, corporativo y cambiario.</p>
+      <p>Firma de abogados fundada en 2012 en Medellín. Derecho tributario, comercial, corporativo y cambiario, y fusiones y adquisiciones.</p>
     </div>
 
     <nav class="site-footer__nav" aria-label="Navegación del pie">
@@ -250,10 +251,11 @@
     <nav class="site-footer__nav" aria-label="Áreas de práctica">
       <h2>Áreas</h2>
       <ul>
-        <li><a href="valor-agregado.html">Derecho tributario</a></li>
-        <li><a href="valor-agregado.html">Derecho comercial</a></li>
-        <li><a href="valor-agregado.html">Derecho corporativo</a></li>
-        <li><a href="valor-agregado.html">Derecho cambiario</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho tributario</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho comercial</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho corporativo</a></li>
+        <li><a href="valor-agregado.html#areas">Derecho cambiario</a></li>
+        <li><a href="valor-agregado.html#areas">Fusiones y adquisiciones</a></li>
       </ul>
     </nav>
 
@@ -274,7 +276,6 @@
     <p><a href="#politica" id="politica">Política de Tratamiento de Datos</a></p>
   </div>
 </footer>
-
 
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/datos.js" defer></script>

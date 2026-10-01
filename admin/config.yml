@@ -51,6 +51,7 @@ collections:
                 options:
                   - { label: Tributario, value: tributario }
                   - { label: Societario, value: societario }
+                  - { label: Comercial, value: comercial }
                   - { label: Cambiario, value: cambiario }
                   - { label: Aduanero, value: aduanero }
               - { name: descripcion, label: Descripción corta, widget: text, required: false }
@@ -73,6 +74,7 @@ collections:
             hint: 'Arrastre para cambiar el orden en que aparecen.'
             fields:
               - { name: nombre, label: Nombre completo, widget: string }
+              - { name: socio, label: Socio(a) fundador(a), widget: boolean, default: false, required: false, hint: 'Aparece arriba, con foto grande, y en el inicio.' }
               - { name: cargo, label: Cargo, widget: string, required: false, hint: 'Ej.: Abogada · Socia' }
               - { name: foto, label: Foto, widget: image, required: false, media_folder: /uploads/equipo, public_folder: /uploads/equipo, hint: 'JPG o PNG. Se recorta en círculo; mejor un retrato centrado.' }
               - { name: pregrado, label: Pregrado, widget: string, required: false }
