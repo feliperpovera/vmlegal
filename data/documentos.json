@@ -1,18 +1,6 @@
 {
   "documentos": [
     {
-      "titulo": "Columna de prueba — Felipe Restrepo",
-      "fecha": "2026-10-01",
-      "area": "tributario",
-      "descripcion": "Documento de prueba para verificar que el panel publica en el sitio. Se puede eliminar desde el panel.",
-      "palabras_clave": [
-        "prueba",
-        "panel"
-      ],
-      "archivo": "/uploads/documentos/Analisis_Semanal_MAG7_2026-10-01.pdf",
-      "destacado": false
-    },
-    {
       "titulo": "Circular N.º 7 de 2026 — Impuesto al patrimonio de personas jurídicas",
       "fecha": "2026-02-25",
       "area": "tributario",
@@ -92,18 +80,6 @@
       "palabras_clave": [],
       "archivo": "https://www.vmlegal.com.co/wp-content/uploads/2023/11/Circular-VM-Legal-No.-22-de-2023.pdf",
       "destacado": false
-    },
-    {
-      "titulo": "Prueba",
-      "fecha": "2026-10-01",
-      "area": "tributario",
-      "descripcion": "Prueba , prueba , prueba",
-      "palabras_clave": [
-        "Prueba",
-        "Prueba"
-      ],
-      "archivo": "/uploads/documentos/Analisis_Semanal_MAG7_2026-10-01.pdf",
-      "destacado": true
     }
   ]
 }

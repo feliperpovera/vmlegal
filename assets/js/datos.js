@@ -35,7 +35,9 @@
   }
 
   function load(url) {
-    return fetch(url, { cache: 'no-cache' }).then(function (r) {
+    // GitHub Pages guarda en caché 10 min; el parámetro fuerza la versión
+    // recién publicada desde el panel.
+    return fetch(url + '?v=' + Date.now(), { cache: 'no-store' }).then(function (r) {
       if (!r.ok) throw new Error(url + ' → ' + r.status);
       return r.json();
     });
