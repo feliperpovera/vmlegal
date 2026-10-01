@@ -9,7 +9,7 @@
         "prueba",
         "panel"
       ],
-      "archivo": "",
+      "archivo": "/uploads/documentos/Analisis_Semanal_MAG7_2026-10-01.pdf",
       "destacado": false
     },
     {
@@ -92,6 +92,18 @@
       "palabras_clave": [],
       "archivo": "https://www.vmlegal.com.co/wp-content/uploads/2023/11/Circular-VM-Legal-No.-22-de-2023.pdf",
       "destacado": false
+    },
+    {
+      "titulo": "Prueba",
+      "fecha": "2026-10-01",
+      "area": "tributario",
+      "descripcion": "Prueba , prueba , prueba",
+      "palabras_clave": [
+        "Prueba",
+        "Prueba"
+      ],
+      "archivo": "/uploads/documentos/Analisis_Semanal_MAG7_2026-10-01.pdf",
+      "destacado": true
     }
   ]
 }
