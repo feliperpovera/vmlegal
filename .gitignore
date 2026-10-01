@@ -2,3 +2,14 @@
 Thumbs.db
 *.log
 .claude/
+
+# Documentos del cliente: llevan notas internas y estrategia comercial.
+# El repo es público; esto no debe subirse nunca.
+cliente/
+
+# Traspaso entre sesiones: contexto interno y transcripción.
+_traspaso/
+
+# Índices generados por scripts/unir_datos.py (en GitHub los arma la acción)
+data/equipo.json
+data/documentos.json

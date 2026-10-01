@@ -1,0 +1,35 @@
+# Publica el sitio en GitHub Pages. Antes une los archivos del panel
+# (data/equipo/*.json, data/documentos/*.json) en los índices que lee el sitio.
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/unir_datos.py
+      - name: Armar el sitio sin archivos internos
+        run: |
+          mkdir _site
+          cp -r index.html valor-agregado.html equipo.html documentos.html contacto.html admin assets data uploads _site/
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+      - id: deploy
+        uses: actions/deploy-pages@v4
