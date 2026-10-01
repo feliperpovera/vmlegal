@@ -2,7 +2,7 @@
 # Cada cambio se guarda como commit en el repositorio y GitHub Pages lo publica.
 backend:
   name: github
-  repo: RevUpAG/vmlegal-propuesta
+  repo: feliperpovera/vmlegal
   branch: main
   commit_messages:
     create: 'Panel: crea {{collection}} «{{slug}}»'
@@ -11,7 +11,7 @@ backend:
     uploadMedia: 'Panel: sube {{path}}'
     deleteMedia: 'Panel: elimina {{path}}'
 
-site_url: https://revupag.github.io/vmlegal-propuesta/
+site_url: https://feliperpovera.github.io/vmlegal/
 logo_url: ../assets/img/logo-vmlegal.png
 
 media_folder: uploads

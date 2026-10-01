@@ -5,7 +5,7 @@ Propuesta comercial y demostración navegable del nuevo sitio web de
 
 ### ▶ Ver en vivo
 
-**https://revupag.github.io/vmlegal-propuesta/** · panel en **/admin/**
+**https://feliperpovera.github.io/vmlegal/** · panel en **/admin/**
 
 La propuesta fue aceptada (29 sep 2026) y se retiró; la raíz ya es el sitio.
 
