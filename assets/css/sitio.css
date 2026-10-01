@@ -248,33 +248,6 @@ body.nav-locked { overflow: hidden; }
 }
 .link-arrow:hover svg { transform: translateX(4px); }
 
-/* Páginas internas: la primera sección hace de cabecera de página. */
-.section--page { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
-.section--page .section-title { font-size: var(--fs-2xl); }
-
-/* ==========================  La firma  =================================== */
-.s-firma { display: grid; gap: var(--sp-8); }
-@media (min-width: 940px) {
-  .s-firma { grid-template-columns: 1.15fr .85fr; gap: var(--sp-9); align-items: start; }
-}
-.s-firma__text--solo { max-width: 62ch; }
-.s-firma__text p { margin-top: var(--sp-4); font-weight: 300; }
-.s-firma__text .section-title { text-transform: uppercase; }
-
-.s-firma__pillars { display: grid; gap: var(--sp-4); }
-.s-firma__pillars li {
-  background: #fff;
-  border: 1px solid var(--vm-line);
-  border-left: 3px solid var(--vm-teal);
-  border-radius: var(--radius);
-  padding: var(--sp-5);
-  box-shadow: var(--shadow-sm);
-}
-.s-firma__pillars h3 {
-  font-size: var(--fs-md); font-weight: 400; margin-bottom: var(--sp-2);
-}
-.s-firma__pillars p { font-size: var(--fs-sm); font-weight: 300; }
-
 /* ==========================  Carrusel  =================================== */
 /* Desplazamiento nativo con scroll-snap: sin librerías, con inercia real en
    el celular y navegable con el teclado. Las flechas y los puntos son un
@@ -410,8 +383,7 @@ body.nav-locked { overflow: hidden; }
 }
 .disclose__trigger[aria-expanded="true"] .chev { transform: rotate(180deg); }
 
-/* La altura la anima el JS midiendo el contenido. La alternativa más limpia,
-   grid-template-rows 0fr→1fr, solo interpola en motores recientes; animar
+/* La altura la anima el JS midiendo el contenido. La alternativa más limpia, grid-template-rows 0fr→1fr, solo interpola en motores recientes; animar
    `height` funciona en cualquiera y el JS deja `auto` al terminar, para que el
    panel siga creciendo si el contenido cambia (por ejemplo, al cambiar idioma). */
 .disclose__panel {
@@ -441,24 +413,11 @@ body.nav-locked { overflow: hidden; }
 }
 .area:hover { box-shadow: var(--shadow-md); border-color: var(--vm-mist); }
 
-.area__icon {
-  display: grid; place-items: center;
-  width: 46px; height: 46px;
-  border-radius: var(--radius);
-  background: var(--vm-teal); color: #fff;
-  margin-bottom: var(--sp-4);
-}
-.area__icon svg {
-  width: 23px; height: 23px;
-  fill: none; stroke: currentColor; stroke-width: 1.5;
-  stroke-linecap: round; stroke-linejoin: round;
-}
 .area h3 {
   font-size: var(--fs-lg); font-weight: 300;
   text-transform: uppercase; letter-spacing: .03em;
   margin-bottom: var(--sp-3);
 }
-.area__sum { font-size: var(--fs-sm); font-weight: 300; }
 
 .area__tags {
   display: flex; flex-wrap: wrap; gap: .4rem;
@@ -605,9 +564,9 @@ body.nav-locked { overflow: hidden; }
 }
 .tag--tributario { color: #04748f; background: rgba(0,147,189,.10);  border-color: rgba(0,147,189,.28); }
 .tag--societario { color: #235f7a; background: rgba(35,95,122,.10);  border-color: rgba(35,95,122,.28); }
-.tag--cambiario  { color: #3f6f86; background: rgba(63,111,134,.10); border-color: rgba(63,111,134,.28); }
-.tag--comercial  { color: #2d6a6a; background: rgba(45,106,106,.10); border-color: rgba(45,106,106,.28); }
-.tag--aduanero   { color: #5c5b5b; background: rgba(112,111,111,.12);border-color: rgba(112,111,111,.30); }
+.tag--cambiario { color: #3f6f86; background: rgba(63,111,134,.10); border-color: rgba(63,111,134,.28); }
+.tag--comercial { color: #2d6a6a; background: rgba(45,106,106,.10); border-color: rgba(45,106,106,.28); }
+.tag--aduanero { color: #5c5b5b; background: rgba(112,111,111,.12);border-color: rgba(112,111,111,.30); }
 
 .circular h3 {
   font-size: var(--fs-md); font-weight: 400; line-height: 1.3;
@@ -643,11 +602,6 @@ body.nav-locked { overflow: hidden; }
   stroke-linecap: round; stroke-linejoin: round;
 }
 #circulars[hidden] { display: none; }
-.circulars__foot {
-  display: flex; flex-direction: column; align-items: center; gap: var(--sp-3);
-  margin-top: var(--sp-7); text-align: center;
-}
-.circulars__foot p { font-size: var(--fs-xs); color: var(--vm-muted); }
 
 /* ==========================  Contacto  =================================== */
 .s-contact { display: grid; gap: var(--sp-8); }
@@ -743,7 +697,6 @@ body.nav-locked { overflow: hidden; }
   font-size: var(--fs-sm); color: var(--vm-ink);
 }
 .s-form__ok[hidden] { display: none; }
-.s-form__demo { font-size: .7rem; color: var(--vm-muted); text-align: center; font-style: italic; }
 
 /* ==========================  Pie  ======================================== */
 .site-footer { background: var(--surface-dark); color: rgba(255,255,255,.6); }
@@ -779,25 +732,6 @@ body.nav-locked { overflow: hidden; }
 @media (min-width: 720px) {
   .site-footer__bottom { flex-direction: row; justify-content: space-between; text-align: left; }
 }
-
-/* ==========================  Acciones flotantes  =========================
-   .wa se conserva a la espera del número de celular correcto: el marcado del
-   botón está retirado del HTML, no estos estilos. */
-.wa {
-  position: fixed; right: var(--gutter); z-index: 70;
-  bottom: calc(var(--gutter) + env(safe-area-inset-bottom));
-  display: grid; place-items: center;
-  width: 54px; height: 54px; border-radius: 50%;
-  background: #25D366; color: #fff;
-  box-shadow: 0 6px 20px rgba(37,211,102,.4);
-  transition: transform var(--dur) var(--ease);
-}
-.wa:hover { transform: scale(1.06); }
-.wa svg { width: 28px; height: 28px; }
-
-
-
-
 
 /* ==========================  Páginas internas  ========================== */
 .section--tight { padding-block: clamp(2rem, 1rem + 4vw, 3.5rem); }
@@ -919,3 +853,38 @@ body.nav-locked { overflow: hidden; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .s-form__fail { margin-top: var(--sp-4); font-size: var(--fs-sm); color: #b42318; }
 .s-form__fail a { text-decoration: underline; }
+
+/* ==========================  Páginas de área (SEO)  ===================== */
+.crumbs ol { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: var(--sp-5); font-size: var(--fs-xs); color: var(--vm-muted); }
+.crumbs li + li::before { content: "/"; margin-right: .4rem; opacity: .6; }
+.crumbs a { color: var(--vm-teal-text); }
+
+.services { display: grid; gap: var(--sp-4); }
+@media (min-width: 700px)  { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1060px) { .services { grid-template-columns: repeat(3, 1fr); } }
+.services li { padding: var(--sp-5); background: #fff; border: 1px solid var(--vm-line); border-left: 3px solid var(--vm-teal); border-radius: var(--radius); }
+.services h3 { font-size: var(--fs-md); font-weight: 400; text-transform: uppercase; letter-spacing: .03em; }
+.services p { margin-top: var(--sp-2); font-size: var(--fs-sm); font-weight: 300; color: var(--vm-muted); }
+
+.faq__list { display: grid; gap: var(--sp-3); max-width: 860px; }
+.faq__item { background: #fff; border: 1px solid var(--vm-line); border-radius: var(--radius); }
+.faq__item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5); cursor: pointer; list-style: none;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary h3 { font-size: var(--fs-base); font-weight: 600; font-family: var(--font-body); }
+.faq__item summary .chev { flex: none; width: 20px; height: 20px; fill: none; stroke: var(--vm-teal-text); stroke-width: 2; transition: transform var(--dur) var(--ease); }
+.faq__item[open] summary .chev { transform: rotate(180deg); }
+.faq__item p { padding: 0 var(--sp-5) var(--sp-5); font-weight: 300; }
+
+.area-links { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-3); }
+.area-links a {
+  display: inline-flex; min-height: 44px; align-items: center; padding: 0 var(--sp-5);
+  border: 1px solid var(--vm-line); border-radius: var(--radius-pill);
+  font-family: var(--font-display); font-size: var(--fs-xs); letter-spacing: .1em; text-transform: uppercase;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.area-links a:hover { border-color: var(--vm-teal); color: var(--vm-teal-text); }
+.area h3 a:hover { color: var(--vm-teal-text); }
+.area__more { margin-top: auto; padding-top: var(--sp-5); }

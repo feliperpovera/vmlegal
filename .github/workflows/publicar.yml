@@ -28,7 +28,7 @@ jobs:
       - name: Armar el sitio sin archivos internos
         run: |
           mkdir _site
-          cp -r index.html valor-agregado.html equipo.html documentos.html contacto.html admin assets data uploads _site/
+          cp -r *.html sitemap.xml robots.txt admin assets data uploads _site/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
       - id: deploy

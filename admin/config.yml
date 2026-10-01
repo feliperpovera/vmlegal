@@ -16,12 +16,19 @@ logo_url: ../assets/img/logo-vmlegal.png
 
 media_folder: uploads
 public_folder: /uploads
+# Nombres de archivo sin tildes ni espacios: así el enlace al PDF nunca se rompe.
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
 
 # Las fotos del equipo se convierten a WebP y se reducen a 800 px al subirlas.
 media_libraries:
   default:
     config:
-      max_file_size: 15000000
+      # 45 MB por archivo. GitHub rechaza archivos de más de 100 MB y avisa desde 50 MB;
+      # para un PDF de circular sobra.
+      max_file_size: 45000000
       transformations:
         raster_image:
           format: webp

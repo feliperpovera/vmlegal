@@ -21,7 +21,10 @@
   // sirvan igual en GitHub Pages (subcarpeta) y en el dominio definitivo.
   function src(p) {
     p = String(p || '');
-    return /^https?:\/\//.test(p) ? p : p.replace(/^\/+/, '');
+    if (/^https?:\/\//.test(p)) return p;
+    // Nombres con espacios o tildes subidos antes de la regla del panel.
+    try { p = decodeURI(p); } catch (e) { /* ya venía codificado a medias */ }
+    return encodeURI(p.replace(/^\/+/, ''));
   }
 
   function initials(name) {
@@ -102,18 +105,25 @@
       '<h3>' + esc(c.titulo) + '</h3>' +
       (c.descripcion ? '<p>' + esc(c.descripcion) + '</p>' : '') +
       (tags.length ? '<ul class="area__tags">' + tags.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '') +
-      (c.archivo ? '<a class="circular__link" href="' + esc(src(c.archivo)) + '" target="_blank" rel="noopener">Ver documento (PDF)' + OUT + '</a>' : '') +
+      (c.archivo ? '<a class="circular__link" href="' + esc(src(c.archivo)) + '" target="_blank" rel="noopener" type="application/pdf">Ver documento (PDF)' + OUT + '</a>' : '') +
       '</li>';
   }
 
   function docs() {
     var list = $('circulars'), feat = $('docFeatured'), latest = $('latestDocs'), year = $('year');
-    if (!list && !feat && !latest) return null;
+    var byArea = $('areaDocs');
+    if (!list && !feat && !latest && !byArea) return null;
     return load('data/documentos.json').then(function (d) {
       var items = (d.documentos || []).slice().sort(function (a, b) {
         return String(b.fecha).localeCompare(String(a.fecha));
       });
       if (list) list.innerHTML = items.map(function (c) { return docCard(c); }).join('');
+      // Páginas de área: sus 3 circulares más recientes; sin ninguna, la sección no se muestra.
+      if (byArea) {
+        var mine = items.filter(function (c) { return c.area === byArea.dataset.area; }).slice(0, 3);
+        byArea.innerHTML = mine.map(function (c) { return docCard(c); }).join('');
+        if (mine.length) $('docsArea').hidden = false;
+      }
       if (latest) latest.innerHTML = items.slice(0, 3).map(function (c) { return docCard(c); }).join('');
       if (feat && items.length) {
         var f = items.filter(function (c) { return c.destacado; })[0] || items[0];

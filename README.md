@@ -19,9 +19,13 @@ La propuesta fue aceptada (29 sep 2026) y se retiró; la raíz ya es el sitio.
 | `valor-agregado.html` | Pilares de la firma y áreas de práctica en carrusel. |
 | `equipo.html` | Equipo, pintado desde `data/equipo.json`. |
 | `documentos.html` | Circulares con buscador y filtro por área, desde `data/documentos.json`. |
+| `derecho-*.html`, `fusiones-y-adquisiciones.html` | Una página por área (SEO): servicios, preguntas frecuentes con schema FAQPage, migas y circulares del área. |
+| `sitemap.xml` · `robots.txt` | Para Google; apuntan a www.vmlegal.com.co. |
 | `contacto.html` | Datos de contacto y formulario (valida; aún no envía). |
 | `admin/` | **Panel de contenido** (Sveltia CMS). Configuración en `admin/config.yml`. |
-| `data/*.json` | Contenido editable: lo escribe el panel. |
+| `data/equipo/*.json` · `data/documentos/*.json` | Contenido editable: un archivo por miembro o documento (así uno nuevo nunca pisa a otro). |
+| `scripts/unir_datos.py` | Une esos archivos en `data/equipo.json` y `data/documentos.json`. Lo corre la acción `.github/workflows/publicar.yml` en cada publicación; en local: `python3 scripts/unir_datos.py`. |
+| `supabase/functions/contacto` | Función que recibe el formulario y envía el correo por Resend (proyecto Supabase «VMLegal»). |
 | `uploads/` | PDFs y fotos que se suben desde el panel. |
 | `assets/js/datos.js` | Lee los JSON y pinta equipo y documentos. |
 | `assets/js/sitio.js` · `i18n.js` | Interacciones y ES ⇄ EN, sin librerías. |
@@ -187,3 +191,13 @@ firma.
 ---
 
 Preparado por **RevUp Agency Group** · 2026
+
+## Antes de publicar en www.vmlegal.com.co
+
+1. Quitar `<meta name="robots" content="noindex, nofollow">` de todas las páginas.
+   Mientras viva en github.io se deja: evita que Google indexe una copia duplicada.
+2. Agregar el dominio a `ORIGINS` en `supabase/functions/contacto/index.ts` (ya está) y
+   cambiar `site_url` en `admin/config.yml`.
+3. Dar de alta el sitio en Google Search Console y enviar `sitemap.xml`.
+4. Crear o actualizar el perfil de Google Business con la dirección del Edificio Danzas.
+5. Que un abogado de la firma revise las respuestas de las preguntas frecuentes.
