@@ -25,7 +25,7 @@
   }
 
   function initials(name) {
-    return name.split(/\s+/).filter(function (w) { return /^[A-ZÁÉÍÓÚÑ]/.test(w); })
+    return String(name || '').split(/\s+/).filter(function (w) { return /^[A-ZÁÉÍÓÚÑ]/.test(w); })
       .slice(0, 2).map(function (w) { return w[0]; }).join('');
   }
 

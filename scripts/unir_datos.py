@@ -12,8 +12,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def leer(carpeta):
     items = []
     for f in sorted(glob.glob(os.path.join(ROOT, 'data', carpeta, '*.json'))):
-        with open(f, encoding='utf-8') as fh:
-            items.append(json.load(fh))
+        # Un archivo dañado no debe frenar la publicación de todo lo demás.
+        try:
+            with open(f, encoding='utf-8') as fh:
+                item = json.load(fh)
+        except (ValueError, OSError) as e:
+            print('::warning file=%s::Se omite: %s' % (os.path.relpath(f, ROOT), e))
+            continue
+        if isinstance(item, dict):
+            items.append(item)
     return items
 
 def escribir(nombre, clave, items):

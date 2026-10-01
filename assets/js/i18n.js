@@ -321,6 +321,10 @@ window.VMi18n = (function () {
     "¿En cuál de estos frentes podemos ayudarle?": "Which of these areas can we help you with?",
     "Cuéntenos su caso y un abogado de la firma le responderá de manera oportuna y personal.": "Tell us about your case and a lawyer from the firm will respond in a timely and personal way.",
 
+    "Enviando…": "Sending…",
+    "Sitio web": "Website",
+    "No pudimos enviar su solicitud. Intente de nuevo o escríbanos a": "We could not send your request. Please try again or write to us at",
+
     "__title": "VM Legal · Tax, commercial, corporate and foreign exchange lawyers — Medellín",
     "__description": "VM Legal is a law firm founded in 2012 in Medellín. We advise domestic and international companies and families on tax, commercial, corporate and foreign exchange law, and on the purchase and sale of businesses."
   };

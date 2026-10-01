@@ -914,3 +914,8 @@ body.nav-locked { overflow: hidden; }
 
 /* ==========================  Contacto  ================================== */
 .map iframe { display: block; width: 100%; height: clamp(280px, 40vw, 440px); border: 0; filter: grayscale(.35); }
+
+/* Formulario: campo trampa y error de envío. */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.s-form__fail { margin-top: var(--sp-4); font-size: var(--fs-sm); color: #b42318; }
+.s-form__fail a { text-decoration: underline; }

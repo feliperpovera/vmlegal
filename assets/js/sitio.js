@@ -305,7 +305,10 @@
     apply();
   }
 
-  /* ===================  Validación del formulario  ==================== */
+  /* ===================  Validación y envío del formulario  ============ */
+  // Función de Supabase que reenvía la solicitud por Resend
+  // (código en supabase/functions/contacto).
+  var FORM_ENDPOINT = 'https://PROYECTO.supabase.co/functions/v1/contacto';
   var form = document.getElementById('contactForm');
   if (form) {
     var ok = document.getElementById('formOk');
@@ -357,12 +360,38 @@
       });
       if (!valid) { first.focus(); return; }
 
-      // Demostración: no se envía información a ningún servidor.
-      if (ok) ok.hidden = false;
       var send = form.querySelector('button[type="submit"]');
-      send.textContent = t('Solicitud enviada');
-      onLang(function () { send.textContent = t('Solicitud enviada'); });
-      fields.forEach(function (f) { f.disabled = true; });
+      var fail = document.getElementById('formFail');
+      var label = function (txt) {
+        send.textContent = t(txt);
+        onLang(function () { send.textContent = t(txt); });
+      };
+      var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+      send.disabled = true;
+      if (fail) fail.hidden = true;
+      label('Enviando…');
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: val('f-nombre'), empresa: val('f-empresa'), email: val('f-email'),
+          telefono: val('f-tel'), area: val('f-area'), mensaje: val('f-msg'),
+          habeas: document.getElementById('f-hab').checked,
+          sitio_web: val('f-web')
+        })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        if (ok) ok.hidden = false;
+        label('Solicitud enviada');
+        form.querySelectorAll('input, select, textarea').forEach(function (f) { f.disabled = true; });
+      }).catch(function (err) {
+        console.error('Formulario:', err);
+        if (fail) fail.hidden = false;
+        send.disabled = false;
+        label('Enviar solicitud');
+      });
     });
   }
 
